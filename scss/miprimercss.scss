@@ -1,0 +1,363 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	height: 100vh;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+h1, h2 { 
+	color: navajowhite;
+}
+
+h1 {
+	font-weight: 900;
+}
+
+h2 {
+	font-weight: 900;
+	color:  #dc143c;
+	background-color: transparent;
+}
+
+h3 {
+	color: #dc143c;
+	font-weight: 700;
+	line-height: 2rem;
+}
+
+@for $i from 1 through 5 {
+	h#{$i} {
+		font-size: 5.5rem - $i;
+	}
+}
+
+img { width: 100%; }
+
+.img-logo-bar {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.img-logo { width: 180px; }
+
+a {
+	font-weight: 400;
+	color: gray;
+	text-decoration: none;
+	&:hover {
+		font-weight: 700;
+		color: #dc143c;
+		text-decoration: none;
+	}
+}
+
+ul {
+	list-style-type: none;
+	color: gray; 
+}
+
+p { color: gray; }
+
+.btn {
+	background-color: #dc143c;
+    color: #ffffff;
+	&:hover {
+		background-color: #ff6347;
+		color: #ffffff;
+	}
+	a {
+		color: white;
+		&:hover {
+			font-weight: 400;
+		}
+	}
+}
+
+.navbar {
+	position: fixed;
+	z-index: 1000;
+	margin-top: 50px;
+	margin-left: 20px;
+	display: none;
+}
+
+.navbar-toggler-icon {
+	background-color: #dc143c;
+	border-radius: 100%;
+	box-shadow: .1px;
+}
+
+.navbar-nav {
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 3px;
+	padding-left: 20px;
+	padding-top: 10px;
+	margin-top: 5px;
+	min-width: 110px;
+}
+
+.navbar-nav li{
+	margin: 0;
+}
+
+.dropdown-menu {
+	background-color: transparent;
+	border: none;
+}
+
+.dropdown-item {
+	font-size: 14px;
+	color: gray;
+	&:hover {
+		color: #dc143c;
+		background-color: transparent;
+	}
+}
+
+.barra-menu {
+	margin: -10px auto 50px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	.dropdown-menu {
+		background-color: rgba(255, 255, 255, 0.9);
+		}
+}
+
+
+/*** Sección 1 - index ***/
+
+#carousel-index {
+	margin-top: 50px;
+	position: relative;
+	width: 80%;
+	align-self: center;
+}
+
+#titulo-principal-index {
+	position: absolute;
+	margin-left: 50%;
+    h1 {
+		color: #ffffff;
+		font-weight: 700;
+		margin-top: -60%;
+		font-size: 3rem;
+		text-shadow: -3px 2px 3px rgba(0, 0, 0, 0.3);
+		line-height: 3rem;
+  		max-width: 345px;   
+    }
+    p {
+		color: #ffffff;
+   		font-weight: 400;   
+    }
+}
+
+.carousel {
+	position: relative;
+}
+
+
+/*** Sección 2 - index ***/
+
+.seccion-dos {
+	background-image: url("../images/background-text.png");
+	height: 768px;
+    div {
+    	text-align: center; 
+	}
+    p {
+		margin: 30px auto;
+   		width: 50%; 
+    }
+    h2 {
+    	padding-top: 200px; 
+	}
+}
+
+
+/** Sección 3 - index **/
+
+.opciones-tejido {
+	background-color: #eaeaea;
+	max-width: 1366px;
+	height: 768px;
+	padding-top: 150px;
+	text-align: center;
+    img {
+		margin-bottom: 20px;    
+	}
+    div {
+		margin: 0px 30px;
+   		min-width: 300px;   
+	}
+}
+
+.section-woody {
+	margin-bottom: 500px;
+    div {
+		position: absolute;
+		margin-left: 60%;
+		width: 300px;
+		margin-top: -30%;
+	}
+}
+
+
+/** FOOTER **/
+
+footer {
+	height: 200px;
+	margin-top: 250px;
+}
+
+.redes {
+	width: 100%;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin:40px 20px;
+	}
+}
+
+$redes: (
+	facebook: #4682b4,
+	instagram: #8b008b,
+	pinterest: #b22222,
+);
+
+@each $red, $color in $redes {
+	.red-#{$red}:hover{
+	color: $color;
+	}
+}
+
+$tipo-de-tejido : (
+	dos-agujas: #ff6347,
+	crochet: #5478af,
+);
+
+@each $tejido, $color in $tipo-de-tejido {
+	.tejido-#{$tejido} {
+		color: $color;
+		font-weight: 700;
+	}
+	.boton-#{$tejido} {
+		background-color: $color;
+		&:hover {
+			background-color: darken($color, 10%);
+		}
+	}
+}
+
+/** tablas **/
+
+table {
+	text-align: center;
+	color: gray;
+	font-size: 0.9rem;
+	.btn {
+		font-size: 0.8rem;
+		padding: 4px 10px;
+	}
+	img {
+		width: 30px;
+		border-radius: 100%;
+	}
+}
+
+/** galeria **/
+
+#galeria {
+	.btn {
+		font-size: 0.8rem;
+		padding: 4px 10px;
+		margin: auto 20px;
+	}
+}
+
+/** patrones **/
+
+.pagina-patrones {
+	p, h3, .nav {
+	text-align: center;
+	margin-bottom: 50px;
+	}
+}
+
+
+
+/** animaciones **/
+
+.animate__shakeY {
+	animation-play-state: paused;
+	&:hover {
+		animation-play-state: running;
+	}
+}
+
+/** MQ **/
+
+@media (max-width: 768px) {
+	#carousel-index {
+		width: 100%;
+	}
+	#titulo-principal-index h1 {
+		font-size: 2.5rem;
+		line-height: 2rem;
+		width: 228px;
+	}
+	.seccion-dos {
+		background-color: #eaeaea;
+		background-repeat: none;
+		margin-bottom: 0;
+		min-height: 768px;
+	}
+	.opciones-tejido {
+		height: 1300px;
+        div {
+			width: 60%;
+			margin: 10px;
+			height: 500px;
+        }
+        article {
+			justify-content: center;
+			margin: 50px;
+        }
+    }
+	.section-woody div {
+		position: relative;
+		text-align: center;
+		width: 60%;
+  		margin: -30px auto;
+	}
+	.navbar {
+		display: block;
+	}
+	#carousel-index {
+		margin-top: 0;
+	}
+	.barra-menu {
+		display: none;
+	}
+}
+
+
+@media (max-width: 576px) {
+	#titulo-principal-index h1, #titulo-principal-index p {
+		display: none;
+	}
+    .seccion-dos { 
+        h2 {
+			font-size: 3rem;
+    	}
+	    p {
+			width: 65%;
+			font-size: 1rem;
+			margin-top: 10px;
+	    }
+        button {
+			display: none;
+		}
+	}
+}
